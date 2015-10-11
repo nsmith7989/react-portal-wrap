@@ -5,6 +5,7 @@ class PortalWrap extends Component {
 
     static propTypes = {
         node: (props, propName) => {
+            if (!props[propName]) return;
             if (typeof props[propName] !== 'function' || typeof props[propName] !== 'undefined') {
                 return new Error('node should be a node or a function that returns a node');
             }

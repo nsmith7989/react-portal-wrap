@@ -31,8 +31,10 @@ describe('PortalWrap Default Behavior', () => {
     });
 
     it('renders child element', () => {
+        const spy = expect.spyOn(console, 'error');
         const rebel = document.querySelector('.rebel');
         expect(rebel).toExist();
+        expect(spy.calls.length).toBe(0);
     });
 
     it('renders child outside of parent', () => {
