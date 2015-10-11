@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/nsmith7989/react-portal-wrap.svg?branch=master)](https://travis-ci.org/nsmith7989/react-portal-wrap)
 
 Higher order component for rendering children at different mount points other than the parent. Works only with a DOM.
 
