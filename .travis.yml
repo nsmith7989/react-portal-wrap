@@ -1,6 +1,14 @@
 language: node_js
 node_js:
-  - "node"
+- node
 script:
-  - npm run lint
-  - npm test
+- npm run lint
+- npm test
+deploy:
+  provider: npm
+  email: nathanael.b.smith@gmail.com
+  api_key:
+    secure: VJM8vGUlNaq0mlwwzoT6FomtxSbVUNO3ptf+F8KdwQJgElO+gH01LGF7k2M8uA32Bl5bou/8WebV79QsIKGGask67rGZQBJMmEn9qZa1SgrmMCQjLuGljybc6bNk1T68yjNmY/fAmRchDT2NU1w5gD92N/6AzakqYrsgwrH7oD+Nv09nbdrq5iZOpSHT9EOY5taTpbyzkziHPxDjh2lVXsfunL+TVm+1nFUqwykby3NKMCWCGG5qosI0FPh0S4bxBAceKSvK68NiGIxNoqJ/+R7sB3Yyyu3Rou42AiSvJ65UiLkOxgKiLcRIkD/TNtzEEWOpd2e3vqmtXmAp8VVl8ksYfJj5UcEdmjswN3Blu7I/zeqgDgWurGUa0BqS0PRcleeS+jCsSqMAwFgTjD7pqPPAqw9ziyzP38KboOub7f4d/4WuhG14b2GX2TLaTv1B2syZlhOJZj6r+VoJzTRNPJYSCXBT5wq9YXbBpxSHiwmBl5eylYArteJdPIaI1D3LmekXyPU+Zs05Z9Ce6hOp15gASiswk6nrjYNaIU7z3MC4NqYFcdRPVYxCmziHT4zudBFOrH6FrjrVHDdFSzp5YZWxoJiexucZVNc4YcKIGDCM92Ri2OoXaiifOrGcE5qjfd2ueWSqKfHLV4m58wQQcTfcvG1BTBt09AwMeyjnz90=
+  on:
+    tags: true
+    repo: nsmith7989/react-portal-wrap
