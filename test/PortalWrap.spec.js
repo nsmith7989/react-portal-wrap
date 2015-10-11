@@ -98,4 +98,18 @@ describe('PortalWrap Custom Behavior', () => {
 
     });
 
+    it('should warn if node passed is not a Node', () => {
+
+        const spy = expect.spyOn(console, 'error');
+
+        render(<div className="parent">
+            <PortalWrap node={{}}>
+                <div className="rebel" />
+            </PortalWrap>
+        </div>, document.getElementById('root'));
+
+        expect(spy.calls.length).toBe(1);
+
+    });
+
 });

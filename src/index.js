@@ -1,7 +1,15 @@
-import React from 'react';
+import React, { Component, PropTypes } from 'react';
 import { render } from 'react-dom';
 
-class PortalWrap extends React.Component {
+class PortalWrap extends Component {
+
+    static propTypes = {
+        node: (props, propName) => {
+            if (typeof props[propName] !== 'function' || typeof props[propName] !== 'undefined') {
+                return new Error('node should be a node or a function that returns a node');
+            }
+        }
+    };
 
     componentDidMount() {
         const { children, node = () => {
@@ -12,12 +20,15 @@ class PortalWrap extends React.Component {
 
         this.node = (typeof node.nodeType !== 'undefined') ?
                 node :
-                node.call(this);
+                (typeof node === 'function') ?
+                    node.call(this) :
+                    null;
 
         this.renderChildren(children);
     }
 
     renderChildren(children) {
+        if (!this.node) return; // do nothing, no node provided
         this.wrapper = render(
             children,
             this.node
