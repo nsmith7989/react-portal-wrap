@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from 'react';
+import { Component } from 'react';
 import { render } from 'react-dom';
 
 class PortalWrap extends Component {
