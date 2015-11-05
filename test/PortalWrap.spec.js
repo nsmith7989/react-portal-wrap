@@ -51,6 +51,26 @@ describe('PortalWrap Default Behavior', () => {
 
 });
 
+describe('PortalWrap Unmount', () =>  {
+    jsdom();
+
+    it('unmounts rebel container', () => {
+        const mount = document.createElement('div');
+        document.body.appendChild(mount);
+        render(<div className="parent">
+            <PortalWrap>
+                <div className="rebel" />
+            </PortalWrap>
+        </div>, mount);
+
+        let rebel = document.querySelector('.rebel');
+        expect(rebel).toExist();
+        render(<div className="parent">
+        </div>, mount);
+        rebel = document.querySelector('.rebel');
+        expect(rebel).toNotExist();
+    });
+});
 
 describe('PortalWrap Custom Behavior', () => {
 
@@ -113,5 +133,7 @@ describe('PortalWrap Custom Behavior', () => {
         expect(spy.calls.length).toBe(1);
 
     });
+
+
 
 });
