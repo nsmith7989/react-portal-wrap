@@ -28,6 +28,11 @@ class PortalWrap extends Component {
         this.renderChildren(children);
     }
 
+    componentWillUnmount() {
+        const parent = this.node.parentNode;
+        parent.removeChild(this.node);
+    }
+
     renderChildren(children) {
         if (!this.node) return; // do nothing, no node provided
         this.wrapper = render(
