@@ -1,6 +1,6 @@
 {
   "name": "react-portal-wrap",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Higher order react component for rendering children at different mount points",
   "main": "./lib/index.js",
   "scripts": {
