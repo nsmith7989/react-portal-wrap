@@ -2,10 +2,11 @@ import React from 'react';
 import { render } from 'react-dom';
 import PortalWrap from 'react-portal-wrap';
 
-const tree = <div className="parent">
+render((
+  <div className="parent">
+    <h1>{'hi'}</h1>
     <PortalWrap>
-        <div className="rebel" />
+      <h2>{'it works!'}</h2>
     </PortalWrap>
-</div>;
-
-render(tree, document.getElementById('root'));
+  </div>
+), document.getElementById('root'));
