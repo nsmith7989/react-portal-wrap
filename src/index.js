@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import { render } from 'react-dom';
+import { render, unmountComponentAtNode } from 'react-dom';
 
 class PortalWrap extends Component {
 
@@ -29,6 +29,7 @@ class PortalWrap extends Component {
     }
 
     componentWillUnmount() {
+        unmountComponentAtNode(this.node);
         const parent = this.node.parentNode;
         parent.removeChild(this.node);
     }
